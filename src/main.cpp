@@ -179,6 +179,10 @@ void op_mode_random() {
                 op_mode_random_b = 0;
             }
 
+            if (op_mode_random_r == 0 && op_mode_random_b == 0 && op_mode_random_g == 0) {
+                op_mode_random_g = 255;
+            }
+
             strip.setPixelColor(i, strip.Color(op_mode_random_r, op_mode_random_g, op_mode_random_b));
         }
     }
