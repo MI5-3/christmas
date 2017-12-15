@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="100">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <df root="." name="0">
+      <df name="src">
+        <in>Constatns.hpp</in>
+      </df>
+      <in>README.md</in>
+      <in>platformio.ini</in>
+    </df>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>nbproject/private/launcher.properties</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceFolderFilter>^(nbproject|.pioenvs)$</sourceFolderFilter>
+  <sourceRootList>
+    <Elem>.</Elem>
+  </sourceRootList>
+  <projectmakefile></projectmakefile>
+  <confs>
+    <conf name="Default" type="0">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>false</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <codeAssistance>
+        <includeAdditional>true</includeAdditional>
+      </codeAssistance>
+      <makefileType>
+        <makeTool>
+          <buildCommandWorkingDir>.</buildCommandWorkingDir>
+          <buildCommand>C:\\Python27\\Scripts\\platformio.exe -f -c netbeans run</buildCommand>
+          <cleanCommand>C:\\Python27\\Scripts\\platformio.exe -f -c netbeans run --target clean</cleanCommand>
+          <executablePath></executablePath>
+          <cTool>
+            <incDir>
+              <pElem>src</pElem>
+              <pElem>C:\Users\Administrator\.platformio\packages\framework-arduinoespressif8266\tools\sdk\include</pElem>
+              <pElem>C:\Users\Administrator\.platformio\packages\framework-arduinoespressif8266\tools\sdk\lwip\include</pElem>
+              <pElem>C:\Users\Administrator\.platformio\packages\framework-arduinoespressif8266\cores\esp8266</pElem>
+              <pElem>C:\Users\Administrator\.platformio\packages\framework-arduinoespressif8266\variants\nodemcu</pElem>
+              <pElem>C:\Users\Administrator\Documents\Arduino\clights\src</pElem>
+              <pElem>C:\Users\Administrator\.platformio\packages\framework-arduinoespressif8266\libraries\ArduinoOTA</pElem>
+              <pElem>C:\Users\Administrator\.platformio\packages\framework-arduinoespressif8266\libraries\DNSServer\src</pElem>
+              <pElem>C:\Users\Administrator\.platformio\packages\framework-arduinoespressif8266\libraries\EEPROM</pElem>
+              <pElem>C:\Users\Administrator\.platformio\packages\framework-arduinoespressif8266\libraries\ESP8266AVRISP\src</pElem>
+              <pElem>C:\Users\Administrator\.platformio\packages\framework-arduinoespressif8266\libraries\ESP8266HTTPClient\src</pElem>
+              <pElem>C:\Users\Administrator\.platformio\packages\framework-arduinoespressif8266\libraries\ESP8266HTTPUpdateServer\src</pElem>
+              <pElem>C:\Users\Administrator\.platformio\packages\framework-arduinoespressif8266\libraries\ESP8266SSDP</pElem>
+              <pElem>C:\Users\Administrator\.platformio\packages\framework-arduinoespressif8266\libraries\ESP8266WebServer\src</pElem>
+              <pElem>C:\Users\Administrator\.platformio\packages\framework-arduinoespressif8266\libraries\ESP8266WiFi\src</pElem>
+              <pElem>C:\Users\Administrator\.platformio\packages\framework-arduinoespressif8266\libraries\ESP8266WiFiMesh\src</pElem>
+              <pElem>C:\Users\Administrator\.platformio\packages\framework-arduinoespressif8266\libraries\ESP8266httpUpdate\src</pElem>
+              <pElem>C:\Users\Administrator\.platformio\packages\framework-arduinoespressif8266\libraries\ESP8266mDNS</pElem>
+              <pElem>C:\Users\Administrator\.platformio\packages\framework-arduinoespressif8266\libraries\Ethernet\src</pElem>
+              <pElem>C:\Users\Administrator\.platformio\packages\framework-arduinoespressif8266\libraries\GDBStub\src</pElem>
+              <pElem>C:\Users\Administrator\.platformio\packages\framework-arduinoespressif8266\libraries\Hash\src</pElem>
+              <pElem>C:\Users\Administrator\.platformio\packages\framework-arduinoespressif8266\libraries\SD\src</pElem>
+              <pElem>C:\Users\Administrator\.platformio\packages\framework-arduinoespressif8266\libraries\SPI</pElem>
+              <pElem>C:\Users\Administrator\.platformio\packages\framework-arduinoespressif8266\libraries\Servo\src</pElem>
+              <pElem>C:\Users\Administrator\.platformio\packages\framework-arduinoespressif8266\libraries\SoftwareSerial</pElem>
+              <pElem>C:\Users\Administrator\.platformio\packages\framework-arduinoespressif8266\libraries\TFT_Touch_Shield_V2</pElem>
+              <pElem>C:\Users\Administrator\.platformio\packages\framework-arduinoespressif8266\libraries\Ticker</pElem>
+              <pElem>C:\Users\Administrator\.platformio\packages\framework-arduinoespressif8266\libraries\Wire</pElem>
+              <pElem>C:\Users\Administrator\.platformio\packages\framework-arduinoespressif8266\libraries\esp8266\src</pElem>
+              <pElem>C:\Users\Administrator\.platformio\packages\toolchain-xtensa\xtensa-lx106-elf\include</pElem>
+              <pElem>C:\Users\Administrator\.platformio\packages\toolchain-xtensa\lib\gcc\xtensa-lx106-elf\4.8.2\include</pElem>
+              <pElem>C:\Users\Administrator\.platformio\packages\toolchain-xtensa\lib\gcc\xtensa-lx106-elf\4.8.2\include-fixed</pElem>
+            </incDir>
+            <preprocessorList>
+              <Elem>ARDUINO=20300</Elem>
+              <Elem>ARDUINO_ARCH_ESP8266</Elem>
+              <Elem>ARDUINO_ESP8266_NODEMCU</Elem>
+              <Elem>ESP8266</Elem>
+              <Elem>F_CPU=80000000L</Elem>
+              <Elem>ICACHE_FLASH</Elem>
+              <Elem>LWIP_OPEN_SRC</Elem>
+              <Elem>PLATFORMIO=30300</Elem>
+              <Elem>__ets__</Elem>
+            </preprocessorList>
+          </cTool>
+          <ccTool>
+            <incDir>
+              <pElem>src</pElem>
+              <pElem>C:\Users\Administrator\.platformio\packages\framework-arduinoespressif8266\tools\sdk\include</pElem>
+              <pElem>C:\Users\Administrator\.platformio\packages\framework-arduinoespressif8266\tools\sdk\lwip\include</pElem>
+              <pElem>C:\Users\Administrator\.platformio\packages\framework-arduinoespressif8266\cores\esp8266</pElem>
+              <pElem>C:\Users\Administrator\.platformio\packages\framework-arduinoespressif8266\variants\nodemcu</pElem>
+              <pElem>C:\Users\Administrator\Documents\Arduino\clights\src</pElem>
+              <pElem>C:\Users\Administrator\.platformio\packages\framework-arduinoespressif8266\libraries\ArduinoOTA</pElem>
+              <pElem>C:\Users\Administrator\.platformio\packages\framework-arduinoespressif8266\libraries\DNSServer\src</pElem>
+              <pElem>C:\Users\Administrator\.platformio\packages\framework-arduinoespressif8266\libraries\EEPROM</pElem>
+              <pElem>C:\Users\Administrator\.platformio\packages\framework-arduinoespressif8266\libraries\ESP8266AVRISP\src</pElem>
+              <pElem>C:\Users\Administrator\.platformio\packages\framework-arduinoespressif8266\libraries\ESP8266HTTPClient\src</pElem>
+              <pElem>C:\Users\Administrator\.platformio\packages\framework-arduinoespressif8266\libraries\ESP8266HTTPUpdateServer\src</pElem>
+              <pElem>C:\Users\Administrator\.platformio\packages\framework-arduinoespressif8266\libraries\ESP8266SSDP</pElem>
+              <pElem>C:\Users\Administrator\.platformio\packages\framework-arduinoespressif8266\libraries\ESP8266WebServer\src</pElem>
+              <pElem>C:\Users\Administrator\.platformio\packages\framework-arduinoespressif8266\libraries\ESP8266WiFi\src</pElem>
+              <pElem>C:\Users\Administrator\.platformio\packages\framework-arduinoespressif8266\libraries\ESP8266WiFiMesh\src</pElem>
+              <pElem>C:\Users\Administrator\.platformio\packages\framework-arduinoespressif8266\libraries\ESP8266httpUpdate\src</pElem>
+              <pElem>C:\Users\Administrator\.platformio\packages\framework-arduinoespressif8266\libraries\ESP8266mDNS</pElem>
+              <pElem>C:\Users\Administrator\.platformio\packages\framework-arduinoespressif8266\libraries\Ethernet\src</pElem>
+              <pElem>C:\Users\Administrator\.platformio\packages\framework-arduinoespressif8266\libraries\GDBStub\src</pElem>
+              <pElem>C:\Users\Administrator\.platformio\packages\framework-arduinoespressif8266\libraries\Hash\src</pElem>
+              <pElem>C:\Users\Administrator\.platformio\packages\framework-arduinoespressif8266\libraries\SD\src</pElem>
+              <pElem>C:\Users\Administrator\.platformio\packages\framework-arduinoespressif8266\libraries\SPI</pElem>
+              <pElem>C:\Users\Administrator\.platformio\packages\framework-arduinoespressif8266\libraries\Servo\src</pElem>
+              <pElem>C:\Users\Administrator\.platformio\packages\framework-arduinoespressif8266\libraries\SoftwareSerial</pElem>
+              <pElem>C:\Users\Administrator\.platformio\packages\framework-arduinoespressif8266\libraries\TFT_Touch_Shield_V2</pElem>
+              <pElem>C:\Users\Administrator\.platformio\packages\framework-arduinoespressif8266\libraries\Ticker</pElem>
+              <pElem>C:\Users\Administrator\.platformio\packages\framework-arduinoespressif8266\libraries\Wire</pElem>
+              <pElem>C:\Users\Administrator\.platformio\packages\framework-arduinoespressif8266\libraries\esp8266\src</pElem>
+              <pElem>C:\Users\Administrator\.platformio\packages\toolchain-xtensa\xtensa-lx106-elf\include</pElem>
+              <pElem>C:\Users\Administrator\.platformio\packages\toolchain-xtensa\lib\gcc\xtensa-lx106-elf\4.8.2\include</pElem>
+              <pElem>C:\Users\Administrator\.platformio\packages\toolchain-xtensa\lib\gcc\xtensa-lx106-elf\4.8.2\include-fixed</pElem>
+            </incDir>
+            <preprocessorList>
+              <Elem>ARDUINO=20300</Elem>
+              <Elem>ARDUINO_ARCH_ESP8266</Elem>
+              <Elem>ARDUINO_ESP8266_NODEMCU</Elem>
+              <Elem>ESP8266</Elem>
+              <Elem>F_CPU=80000000L</Elem>
+              <Elem>ICACHE_FLASH</Elem>
+              <Elem>LWIP_OPEN_SRC</Elem>
+              <Elem>PLATFORMIO=30300</Elem>
+              <Elem>__ets__</Elem>
+            </preprocessorList>
+          </ccTool>
+        </makeTool>
+        <preBuild>
+          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
+          <preBuildCommand></preBuildCommand>
+        </preBuild>
+      </makefileType>
+      <item path="README.md" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="platformio.ini" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Constatns.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>
