@@ -102,12 +102,12 @@ void op_mode_color_wipe() {
     if ((unsigned long) (millis() - op_mode_color_wipe_change_time) > OP_MODE_COLOR_WIPE_TIME) {
         op_mode_color_wipe_change_time = millis();
 
-        strip.setPixelColor(op_mode_chase_position, strip.Color(0, 255, 0));
+        strip.setPixelColor(op_mode_color_wipe_position, strip.Color(0, 255, 0));
 
-        op_mode_chase_position++;
+        op_mode_color_wipe_position++;
 
-        if (op_mode_chase_position > NUM_LEDS) {
-            op_mode_chase_position = 0;
+        if (op_mode_color_wipe_position > NUM_LEDS) {
+            op_mode_color_wipe_position = 0;
 
             for (uint16_t i = 0; i < NUM_LEDS; i++) {
                 strip.setPixelColor(i, strip.Color(0, 0, 0));
