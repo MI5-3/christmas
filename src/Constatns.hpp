@@ -7,7 +7,7 @@
 #define NUM_LEDS                                                                71
 #define NUM_OF_EFFECTS                                                          7
 
-#define MINIMUM_LIGHTING_TIMEOUT                                                20000
+#define MINIMUM_LIGHTING_TIMEOUT                                                50000
 
 #define OP_MODE_COLOR_WIPE                                                      0
 #define OP_MODE_CHASE                                                           1
@@ -27,4 +27,4 @@
 #define OP_MODE_SHIFT_TIME                                                      250
 #define OP_MODE_SOLID_TIME                                                      5000
 #define OP_MODE_SOLID_FADE_TIME                                                 20
-#define OP_MODE_RANDOM_ON                                                       25
+#define OP_MODE_RANDOM_ON_TIME                                                  25

@@ -68,6 +68,10 @@ byte op_mode_random_on_positions[NUM_LEDS];
 uint16_t op_mode_random_on_random = 0;
 unsigned long op_mode_random_on_change_time = millis();
 
+//random blink
+unsigned long colorChange = millis();
+unsigned long lightinig = millis();
+
 void setup();
 void loop();
 

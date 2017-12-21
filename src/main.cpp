@@ -50,6 +50,29 @@ void setup() {
 void loop() {
     ArduinoOTA.handle();
 
+    if ((unsigned long) (millis() - lightinig) > MINIMUM_LIGHTING_TIMEOUT) {
+        lightinig = millis();
+        if (random(101) < 80) {
+            return;
+        }
+
+        long rnd = random(30);
+        byte onOff = 1;
+        for (uint8_t j = 0; j < rnd; j++) {
+
+            for (uint8_t i = 0; i < NUM_LEDS; i++) {
+                if (onOff)
+                    strip.setPixelColor(i, strip.Color(255, 255, 255, 255));
+                else
+                    strip.setPixelColor(i, strip.Color(0, 0, 0, 0));
+            }
+            onOff = !onOff;
+            delay(random(400));
+            strip.show();
+        }
+        return;
+    }
+
     switch (op_mode) {
         case OP_MODE_CHASE:
             op_mode_chase();
@@ -68,6 +91,7 @@ void loop() {
             break;
         case OP_MODE_SOLID:
             op_mode_solid();
+            break;
         case OP_MODE_RANDOM_ON:
             op_mode_random_on();
             break;
@@ -86,6 +110,12 @@ void loop() {
         for (uint16_t i = 0; i < NUM_LEDS; i++) {
             strip.setPixelColor(i, strip.Color(0, 0, 0));
         }
+
+        for (uint16_t i = 0; i < NUM_LEDS; i++) {
+            op_mode_random_on_positions[i] = 0;
+        }
+
+        op_mode_random_color = random(0, OP_MODE_RANDOM_LENGTH);
     }
 }
 
@@ -274,7 +304,7 @@ void op_mode_random() {
 }
 
 void op_mode_random_on() {
-    if ((unsigned long) (millis() - op_mode_random_on_change_time) > OP_MODE_RANDOM_ON) {
+    if ((unsigned long) (millis() - op_mode_random_on_change_time) > OP_MODE_RANDOM_ON_TIME) {
         op_mode_random_on_change_time = millis();
 
         op_mode_random_on_random = random(0, NUM_LEDS);
