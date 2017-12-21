@@ -5,7 +5,7 @@
 //pin for strip
 #define PIN                                                                     D6
 #define NUM_LEDS                                                                71
-#define NUM_OF_EFFECTS                                                          6
+#define NUM_OF_EFFECTS                                                          7
 
 #define MINIMUM_LIGHTING_TIMEOUT                                                20000
 
@@ -15,6 +15,7 @@
 #define OP_MODE_SHIFT                                                           2
 #define OP_MODE_SOLID                                                           3
 #define OP_MODE_RANDOM                                                          4
+#define OP_MODE_RANDOM_ON                                                       6
 
 #define OP_MODE_TIME                                                            60000
 
@@ -26,3 +27,4 @@
 #define OP_MODE_SHIFT_TIME                                                      250
 #define OP_MODE_SOLID_TIME                                                      5000
 #define OP_MODE_SOLID_FADE_TIME                                                 20
+#define OP_MODE_RANDOM_ON                                                       25
