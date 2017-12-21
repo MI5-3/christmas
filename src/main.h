@@ -17,11 +17,12 @@ const char* host = HOST_NAME;
 
 Adafruit_NeoPixel strip = Adafruit_NeoPixel(NUM_LEDS, PIN, NEO_GRB + NEO_KHZ800);
 
-uint8_t op_mode = OP_MODE_RANDOM;
+uint8_t op_mode = OP_MODE_CHASE;
 unsigned long op_mode_change_time = millis();
 
 uint8_t op_mode_chase_length = 6;
 int op_mode_chase_position = -6;
+uint8_t op_mode_chase_state = 0;
 unsigned long op_mode_chase_change_time = millis();
 
 unsigned long op_mode_random_change_time = millis();

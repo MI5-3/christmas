@@ -92,12 +92,17 @@ void op_mode_chase() {
             if (i > 0 && i < NUM_LEDS) {
                 strip.setPixelColor(i, strip.Color(0, 255, 0));
             }
+            
+            if(i >= NUM_LEDS) {
+                Serial.println(i - NUM_LEDS);
+                strip.setPixelColor(i - NUM_LEDS, strip.Color(0, 255, 0));
+            }
         }
 
         op_mode_chase_position++;
 
         if (op_mode_chase_position > NUM_LEDS) {
-            op_mode_chase_position = -6;
+            op_mode_chase_position = 0;
         }
     }
 }
