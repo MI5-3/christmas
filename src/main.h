@@ -17,7 +17,7 @@ const char* host = HOST_NAME;
 
 Adafruit_NeoPixel strip = Adafruit_NeoPixel(NUM_LEDS, PIN, NEO_GRB + NEO_KHZ800);
 
-uint8_t op_mode = OP_MODE_RANDOM_SOLID;
+uint8_t op_mode = OP_MODE_SOLID;
 unsigned long op_mode_change_time = millis();
 
 uint8_t op_mode_chase_length = 6;

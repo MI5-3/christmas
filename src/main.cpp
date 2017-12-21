@@ -62,7 +62,7 @@ void loop() {
 
             for (uint8_t i = 0; i < NUM_LEDS; i++) {
                 if (onOff)
-                    strip.setPixelColor(i, strip.Color(255, 255, 255, 255));
+                    strip.setPixelColor(i, op_mode_random_colors[op_mode_random_color]);
                 else
                     strip.setPixelColor(i, strip.Color(0, 0, 0, 0));
             }
