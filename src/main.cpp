@@ -88,6 +88,11 @@ void loop() {
 }
 
 void op_mode_chase() {
+    if ((unsigned long) (millis() - op_mode_chase_change_color_time) > OP_MODE_CHASE_COLOR_TIME) {
+        op_mode_chase_change_color_time = millis();
+        op_mode_random_color = random(0, OP_MODE_RANDOM_LENGTH);
+    }
+
     if ((unsigned long) (millis() - op_mode_chase_change_time) > OP_MODE_CHASE_TIME) {
         op_mode_chase_change_time = millis();
 
@@ -97,12 +102,12 @@ void op_mode_chase() {
 
         for (int i = op_mode_chase_position; i < op_mode_chase_position + op_mode_chase_length; i++) {
             if (i > 0 && i < NUM_LEDS) {
-                strip.setPixelColor(i, strip.Color(0, 255, 0));
+                strip.setPixelColor(i, op_mode_random_colors[op_mode_random_color]);
             }
 
             if (i >= NUM_LEDS) {
                 Serial.println(i - NUM_LEDS);
-                strip.setPixelColor(i - NUM_LEDS, strip.Color(0, 255, 0));
+                strip.setPixelColor(i - NUM_LEDS, op_mode_random_colors[op_mode_random_color]);
             }
         }
 

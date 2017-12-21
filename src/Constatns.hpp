@@ -19,6 +19,7 @@
 #define OP_MODE_TIME                                                            60000
 
 #define OP_MODE_CHASE_TIME                                                      80
+#define OP_MODE_CHASE_COLOR_TIME                                                20
 #define OP_MODE_RANDOM_TIME                                                     100
 #define OP_MODE_RANDOM_LENGTH                                                   10                                                     
 #define OP_MODE_COLOR_WIPE_TIME                                                 100
