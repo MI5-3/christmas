@@ -9,13 +9,15 @@
 #include <avr/power.h>
 #endif
 
+#define C(r,g,b)              ((uint32_t)r << 16) | ((uint32_t)g <<  8) | b
+
 const char* ssid = WIFI_SSID;
 const char* password = WIFI_PASS;
 const char* host = HOST_NAME;
 
 Adafruit_NeoPixel strip = Adafruit_NeoPixel(NUM_LEDS, PIN, NEO_GRB + NEO_KHZ800);
 
-uint8_t op_mode = OP_MODE_SOLID;
+uint8_t op_mode = OP_MODE_RANDOM;
 unsigned long op_mode_change_time = millis();
 
 uint8_t op_mode_chase_length = 6;
@@ -23,9 +25,20 @@ int op_mode_chase_position = -6;
 unsigned long op_mode_chase_change_time = millis();
 
 unsigned long op_mode_random_change_time = millis();
-uint8_t op_mode_random_r = 0;
-uint8_t op_mode_random_g = 0;
-uint8_t op_mode_random_b = 0;
+uint8_t op_mode_random_color = 0;
+
+uint32_t op_mode_random_colors[OP_MODE_RANDOM_LENGTH] = {
+    C(255, 0, 0),
+    C(0, 255, 0),
+    C(0, 0, 255),
+    C(255, 255, 0),
+    C(0, 255, 255),
+    C(255, 0, 255),
+    C(255, 119, 0),
+    C(0, 144, 255),
+    C(152, 0, 255),
+    C(255, 255, 255)
+};
 
 uint8_t op_mode_color_wipe_position = 0;
 unsigned long op_mode_color_wipe_change_time = millis();

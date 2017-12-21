@@ -216,27 +216,9 @@ void op_mode_random() {
     if ((unsigned long) (millis() - op_mode_random_change_time) > OP_MODE_RANDOM_TIME) {
         op_mode_random_change_time = millis();
         for (uint16_t i = 0; i < NUM_LEDS; i++) {
-            op_mode_random_r = random(0, 255);
-            op_mode_random_g = random(0, 255);
-            op_mode_random_b = random(0, 255);
+            op_mode_random_color = random(0, OP_MODE_RANDOM_LENGTH);
 
-            if (op_mode_random_r < 200) {
-                op_mode_random_r = 0;
-            }
-
-            if (op_mode_random_g < 200) {
-                op_mode_random_g = 0;
-            }
-
-            if (op_mode_random_b < 200) {
-                op_mode_random_b = 0;
-            }
-
-            if (op_mode_random_r == 0 && op_mode_random_b == 0 && op_mode_random_g == 0) {
-                op_mode_random_g = 255;
-            }
-
-            strip.setPixelColor(i, strip.Color(op_mode_random_r, op_mode_random_g, op_mode_random_b));
+            strip.setPixelColor(i, op_mode_random_colors[op_mode_random_color]);
         }
     }
 }
