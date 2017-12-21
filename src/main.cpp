@@ -54,6 +54,9 @@ void loop() {
         case OP_MODE_CHASE:
             op_mode_chase();
             break;
+        case OP_MODE_RCHASE:
+            op_mode_rchase();
+            break;
         case OP_MODE_COLOR_WIPE:
             op_mode_color_wipe();
             break;
@@ -103,6 +106,38 @@ void op_mode_chase() {
 
         if (op_mode_chase_position > NUM_LEDS) {
             op_mode_chase_position = 0;
+        }
+    }
+}
+
+void op_mode_rchase() {
+    if ((unsigned long) (millis() - op_mode_rchase_change_time) > OP_MODE_CHASE_TIME) {
+        op_mode_rchase_change_time = millis();
+        
+        if(op_mode_rchase_position == 0) {
+            //NOTE: we are reusing variables here!
+            op_mode_random_color = random(0, OP_MODE_RANDOM_LENGTH);
+        }
+        
+        for (uint16_t i = 0; i < NUM_LEDS; i++) {
+            strip.setPixelColor(i, strip.Color(0, 0, 0));
+        }
+
+        for (int i = op_mode_rchase_position; i < op_mode_rchase_position + op_mode_rchase_length; i++) {
+            if (i > 0 && i < NUM_LEDS) {
+                strip.setPixelColor(i, op_mode_random_colors[op_mode_random_color]);
+            }
+            
+            if(i >= NUM_LEDS) {
+                Serial.println(i - NUM_LEDS);
+                strip.setPixelColor(i - NUM_LEDS, op_mode_random_colors[op_mode_random_color]);
+            }
+        }
+
+        op_mode_rchase_position++;
+
+        if (op_mode_rchase_position > NUM_LEDS) {
+            op_mode_rchase_position = 0;
         }
     }
 }

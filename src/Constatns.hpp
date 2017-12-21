@@ -10,6 +10,7 @@
 
 #define OP_MODE_COLOR_WIPE                                                      0
 #define OP_MODE_CHASE                                                           1
+#define OP_MODE_RCHASE                                                          5
 #define OP_MODE_SHIFT                                                           2
 #define OP_MODE_SOLID                                                           3
 #define OP_MODE_RANDOM                                                          4
