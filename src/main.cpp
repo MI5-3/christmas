@@ -75,7 +75,7 @@ void loop() {
 
     if ((unsigned long) (millis() - op_mode_change_time) > OP_MODE_TIME) {
         op_mode_change_time = millis();
-        op_mode = random(0, 5);
+        op_mode = random(0, NUM_OF_EFFECTS);
 
         op_mode_chase_position = -6;
         op_mode_color_wipe_position = 0;

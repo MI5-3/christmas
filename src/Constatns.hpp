@@ -5,6 +5,7 @@
 //pin for strip
 #define PIN                                                                     D6
 #define NUM_LEDS                                                                71
+#define NUM_OF_EFFECTS                                                          6
 
 #define MINIMUM_LIGHTING_TIMEOUT                                                20000
 
