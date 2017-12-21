@@ -80,6 +80,10 @@ void loop() {
         op_mode_chase_position = -6;
         op_mode_color_wipe_position = 0;
         op_mode_shift_position = 0;
+
+        for (uint16_t i = 0; i < NUM_LEDS; i++) {
+            strip.setPixelColor(i, strip.Color(0, 0, 0));
+        }
     }
 }
 
@@ -95,8 +99,8 @@ void op_mode_chase() {
             if (i > 0 && i < NUM_LEDS) {
                 strip.setPixelColor(i, strip.Color(0, 255, 0));
             }
-            
-            if(i >= NUM_LEDS) {
+
+            if (i >= NUM_LEDS) {
                 Serial.println(i - NUM_LEDS);
                 strip.setPixelColor(i - NUM_LEDS, strip.Color(0, 255, 0));
             }
@@ -113,12 +117,12 @@ void op_mode_chase() {
 void op_mode_rchase() {
     if ((unsigned long) (millis() - op_mode_rchase_change_time) > OP_MODE_CHASE_TIME) {
         op_mode_rchase_change_time = millis();
-        
-        if(op_mode_rchase_position == 0) {
+
+        if (op_mode_rchase_position == 0) {
             //NOTE: we are reusing variables here!
             op_mode_random_color = random(0, OP_MODE_RANDOM_LENGTH);
         }
-        
+
         for (uint16_t i = 0; i < NUM_LEDS; i++) {
             strip.setPixelColor(i, strip.Color(0, 0, 0));
         }
@@ -127,8 +131,8 @@ void op_mode_rchase() {
             if (i > 0 && i < NUM_LEDS) {
                 strip.setPixelColor(i, op_mode_random_colors[op_mode_random_color]);
             }
-            
-            if(i >= NUM_LEDS) {
+
+            if (i >= NUM_LEDS) {
                 Serial.println(i - NUM_LEDS);
                 strip.setPixelColor(i - NUM_LEDS, op_mode_random_colors[op_mode_random_color]);
             }
@@ -146,16 +150,17 @@ void op_mode_color_wipe() {
     if ((unsigned long) (millis() - op_mode_color_wipe_change_time) > OP_MODE_COLOR_WIPE_TIME) {
         op_mode_color_wipe_change_time = millis();
 
-        strip.setPixelColor(op_mode_color_wipe_position, strip.Color(0, 255, 0));
+        if (op_mode_color_wipe_position == 0) {
+            //NOTE: we are reusing variables here!
+            op_mode_random_color = random(0, OP_MODE_RANDOM_LENGTH);
+        }
+
+        strip.setPixelColor(op_mode_color_wipe_position, op_mode_random_colors[op_mode_random_color]);
 
         op_mode_color_wipe_position++;
 
         if (op_mode_color_wipe_position > NUM_LEDS) {
             op_mode_color_wipe_position = 0;
-
-            for (uint16_t i = 0; i < NUM_LEDS; i++) {
-                strip.setPixelColor(i, strip.Color(0, 0, 0));
-            }
         }
     }
 }
