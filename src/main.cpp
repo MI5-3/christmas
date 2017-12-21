@@ -95,6 +95,9 @@ void loop() {
         case OP_MODE_RANDOM_ON:
             op_mode_random_on();
             break;
+        case OP_MODE_RANDOM_SOLID:
+            op_mode_random_solid();
+            break;
     }
 
     strip.show();
@@ -326,6 +329,18 @@ void op_mode_random_on() {
             for (uint16_t i = 0; i < NUM_LEDS; i++) {
                 op_mode_random_on_positions[i] = 0;
             }
+        }
+    }
+}
+
+void op_mode_random_solid() {
+    if ((unsigned long) (millis() - op_mode_random_solid_change) > OP_MODE_RANDOM_SOLID_TIME) {
+        op_mode_random_solid_change = millis();
+
+        op_mode_random_color = random(0, OP_MODE_RANDOM_LENGTH);
+
+        for (uint16_t i = 0; i < NUM_LEDS; i++) {
+            strip.setPixelColor(i, op_mode_random_colors[op_mode_random_color]);
         }
     }
 }
