@@ -106,7 +106,6 @@ void op_mode_chase() {
             }
 
             if (i >= NUM_LEDS) {
-                Serial.println(i - NUM_LEDS);
                 strip.setPixelColor(i - NUM_LEDS, op_mode_random_colors[op_mode_random_color]);
             }
         }
@@ -138,7 +137,6 @@ void op_mode_rchase() {
             }
 
             if (i >= NUM_LEDS) {
-                Serial.println(i - NUM_LEDS);
                 strip.setPixelColor(i - NUM_LEDS, op_mode_random_colors[op_mode_random_color]);
             }
         }
