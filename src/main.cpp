@@ -73,6 +73,10 @@ void loop() {
     if ((unsigned long) (millis() - op_mode_change_time) > OP_MODE_TIME) {
         op_mode_change_time = millis();
         op_mode = random(0, 5);
+
+        op_mode_chase_position = -6;
+        op_mode_color_wipe_position = 0;
+        op_mode_shift_position = 0;
     }
 }
 
@@ -139,22 +143,71 @@ void op_mode_shift() {
 void op_mode_solid() {
     if ((unsigned long) (millis() - op_mode_solid_change_time) > OP_MODE_SOLID_TIME) {
         op_mode_solid_change_time = millis();
-        op_mode_solid_random = random(1, 4);
+        if (op_mode_solid_state == 0) {
+            op_mode_solid_state = 1;
+        } else if (op_mode_solid_state == 1) {
+            op_mode_solid_state = 0;
 
-        op_mode_solid_r = 0;
-        op_mode_solid_g = 0;
-        op_mode_solid_b = 0;
+            //we need to selec color
 
-        if (op_mode_solid_random == 1) {
-            op_mode_solid_r = 255;
-        } else if (op_mode_solid_random == 2) {
-            op_mode_solid_g = 255;
-        } else if (op_mode_solid_random == 3) {
-            op_mode_solid_b = 255;
+            op_mode_solid_random = random(1, 4);
+
+            op_mode_solid_r = 0;
+            op_mode_solid_g = 0;
+            op_mode_solid_b = 0;
+
+            if (op_mode_solid_random == 1) {
+                op_mode_solid_r = 255;
+            } else if (op_mode_solid_random == 2) {
+                op_mode_solid_g = 255;
+            } else if (op_mode_solid_random == 3) {
+                op_mode_solid_b = 255;
+            }
+            op_mode_solid_r_B = 0;
+            op_mode_solid_g_B = 0;
+            op_mode_solid_b_B = 0;
         }
+    }
 
-        for (uint16_t i = 0; i < NUM_LEDS; i++) {
-            strip.setPixelColor(i, strip.Color(op_mode_solid_r, op_mode_solid_g, op_mode_solid_b));
+    if ((unsigned long) (millis() - op_mode_solid_fade_time) > OP_MODE_SOLID_FADE_TIME) {
+        op_mode_solid_fade_time = millis();
+
+        if (op_mode_solid_state == 0) {
+            if (op_mode_solid_random == 1) {
+                if (op_mode_solid_r_B != 255) {
+                    op_mode_solid_r_B++;
+                }
+            } else if (op_mode_solid_random == 2) {
+                if (op_mode_solid_g_B != 255) {
+                    op_mode_solid_g_B++;
+                }
+            } else if (op_mode_solid_random == 3) {
+                if (op_mode_solid_b_B != 255) {
+                    op_mode_solid_b_B++;
+                }
+            }
+
+            for (uint16_t i = 0; i < NUM_LEDS; i++) {
+                strip.setPixelColor(i, strip.Color(op_mode_solid_r_B, op_mode_solid_g_B, op_mode_solid_b_B));
+            }
+        } else if (op_mode_solid_state == 1) {
+            if (op_mode_solid_random == 1) {
+                if (op_mode_solid_r_B != 2) {
+                    op_mode_solid_r_B--;
+                }
+            } else if (op_mode_solid_random == 2) {
+                if (op_mode_solid_g_B != 2) {
+                    op_mode_solid_g_B--;
+                }
+            } else if (op_mode_solid_random == 3) {
+                if (op_mode_solid_b_B != 2) {
+                    op_mode_solid_b_B--;
+                }
+            }
+
+            for (uint16_t i = 0; i < NUM_LEDS; i++) {
+                strip.setPixelColor(i, strip.Color(op_mode_solid_r_B, op_mode_solid_g_B, op_mode_solid_b_B));
+            }
         }
     }
 }

@@ -36,8 +36,13 @@ unsigned long op_mode_shift_change_time = millis();
 uint8_t op_mode_solid_r = 0;
 uint8_t op_mode_solid_g = 0;
 uint8_t op_mode_solid_b = 0;
+uint8_t op_mode_solid_r_B = 0;
+uint8_t op_mode_solid_g_B = 0;
+uint8_t op_mode_solid_b_B = 0;
 uint8_t op_mode_solid_random = 0;
+uint8_t op_mode_solid_state = 1;
 unsigned long op_mode_solid_change_time = millis();
+unsigned long op_mode_solid_fade_time = millis();
 
 void setup();
 void loop();
